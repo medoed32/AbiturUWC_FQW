@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"internal/app/authorizationApp/controller"
+	"/AbiturUWC_FQW/internal/app/authorizationApp/controller"
 
 	"github.com/julienschmidt/httprouter"
 )
