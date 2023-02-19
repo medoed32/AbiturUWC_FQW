@@ -1,21 +1,47 @@
 package model
 
+import (
+	"github.com/medoed32/AbiturUWC_FQW/internal/app/authorizationApp/server"
+)
+
 type User struct {
-	Id         int
-	Login      string
-	FirstName  string
-	LastName   string
-	Patronymic string
-	Phone      string
-	City       string
-	Email      string
-	Role       string
+	Id           int
+	Login        string
+	Password     string
+	Role_id      int
+	User_data_id int
 }
 
 func GetAllUsers() (users []User, err error) {
-	users = []User{
-		{1, "test", "Джон", "До", "Konstantinovich", "79998764643", "Moscow", "Email", "Admin"},
-		{2, "test2", "Tera", "dida", "Konstantinovich", "79458763343", "SPB", "test@test.ru", "Moderator"},
+	query := `SELECT id, login, password FROM users`
+	rows, err := server.Db.Queryx(query)
+	if err != nil {
+		return users, err
 	}
+	defer rows.Close()
+	user := User{}
+	for rows.Next() {
+		err = rows.StructScan(&user)
+		if err != nil {
+			return users, err
+		}
+		users = append(users, user)
+	}
+	return users, err
+}
+
+func NewUser(login, password string, roleId int) *User {
+	return &User{Login: login, Password: password, Role_id: roleId}
+}
+
+func GetUserById(userId string) (u User, err error) {
+	query := `SELECT * FROM users WHERE id = ?`
+	err = server.Db.Get(&u, query, userId)
+	return
+}
+
+func (u *User) Add() (err error) {
+	query := `INSERT INTO users(login, password, role_id) VALUES (?, ?, 3)`
+	_, err = server.Db.Exec(query, u.Login, u.Password)
 	return
 }

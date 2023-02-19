@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"encoding/json"
 	"html/template"
 	"net/http"
 	"path/filepath"
@@ -27,6 +28,34 @@ func GetUsers(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 	//исполняем именованный шаблон "users", передавая туда массив со списком пользователей
 	err = tmpl.ExecuteTemplate(rw, "users", users)
+	if err != nil {
+		http.Error(rw, err.Error(), 400)
+		return
+	}
+}
+
+func AddUser(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
+	//получаем значение из параметра login, переданного в форме запроса
+	login := r.FormValue("login")
+	//получаем значение из параметра password, переданного в форме запроса
+	password := r.FormValue("password")
+
+	//проверяем на пустые значения
+	if login == "" || password == "" {
+		http.Error(rw, "Поля не могут быть пустыми", 400)
+		return
+	}
+	//создаем новый объект
+	user := model.NewUser(login, password, 3)
+	//записываем нового пользователя в таблицу БД
+	err := user.Add()
+	if err != nil {
+		http.Error(rw, err.Error(), 400)
+		return
+	}
+
+	//возвращаем текстовое подтверждение об успешном выполнении операции
+	err = json.NewEncoder(rw).Encode("Пользователь успешно добавлен!")
 	if err != nil {
 		http.Error(rw, err.Error(), 400)
 		return

@@ -23,4 +23,5 @@ func routes(r *httprouter.Router) {
 	r.ServeFiles("/web/*filepath", http.Dir("public"))
 	r.GET("/", controller.StartPage)
 	r.GET("/users", controller.GetUsers)
+	r.POST("/user/add", controller.AddUser)
 }
