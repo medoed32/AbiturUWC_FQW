@@ -2,9 +2,10 @@ package controller
 
 import (
 	"html/template"
-	"internal/app/authorizationApp/model"
 	"net/http"
 	"path/filepath"
+
+	"github.com/medoed32/AbiturUWC_FQW/internal/app/authorizationApp/model"
 
 	"github.com/julienschmidt/httprouter"
 )
