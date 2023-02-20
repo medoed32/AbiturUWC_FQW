@@ -44,3 +44,9 @@ func (u *User) AddUser() (err error) {
 	_, err = server.Db.Exec(query, u.Login, u.Password)
 	return
 }
+
+func (u *User) DeleteUser() (err error) {
+	query := `DELETE FROM users WHERE id = ?`
+	_, err = server.Db.Exec(query, u.Id)
+	return
+}
