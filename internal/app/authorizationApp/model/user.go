@@ -13,8 +13,7 @@ type User struct {
 }
 
 func GetAllUsers() (users []User, err error) {
-	query := `SELECT id, login, password FROM users`
-	rows, err := server.Db.Queryx(query)
+	rows, err := server.Db.Queryx(`SELECT id, login, password FROM users`)
 	if err != nil {
 		return users, err
 	}
@@ -40,7 +39,7 @@ func GetUserById(userId string) (u User, err error) {
 	return
 }
 
-func (u *User) Add() (err error) {
+func (u *User) AddUser() (err error) {
 	query := `INSERT INTO users(login, password, role_id) VALUES (?, ?, 3)`
 	_, err = server.Db.Exec(query, u.Login, u.Password)
 	return

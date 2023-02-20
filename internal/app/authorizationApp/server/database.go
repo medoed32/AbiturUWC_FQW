@@ -12,7 +12,7 @@ var Db *sqlx.DB
 func InitDB() (err error) {
 	//строка, содержащая данные для подключения к БД в следующем формате:
 	//login:password@tcp(host:port)/dbname
-	var dataSourceName = "web:sdzd-RDsd-32ds-#2@q@tcp(127.0.0.1:3306)/abitur_uwc"
+	var dataSourceName = "web:pas@tcp(localhost:3306)/abitur_uwc"
 	//подключаемся к БД, используя нужный драйвер и данные для подключения
 	Db, err = sqlx.Connect("mysql", dataSourceName)
 	if err != nil {

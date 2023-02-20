@@ -34,7 +34,7 @@ func GetUsers(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	}
 }
 
-func AddUser(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
+func AddUsers(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	//получаем значение из параметра login, переданного в форме запроса
 	login := r.FormValue("login")
 	//получаем значение из параметра password, переданного в форме запроса
@@ -48,7 +48,7 @@ func AddUser(rw http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	//создаем новый объект
 	user := model.NewUser(login, password, 3)
 	//записываем нового пользователя в таблицу БД
-	err := user.Add()
+	err := user.AddUser()
 	if err != nil {
 		http.Error(rw, err.Error(), 400)
 		return
