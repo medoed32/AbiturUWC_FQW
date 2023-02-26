@@ -16,7 +16,7 @@ import (
 func main() {
 
 	//Conect mySQL DB
-	err := database.InitDBmoderator("web:pas@/abitur_uwc")
+	err := database.InitDBmoderator("webinfo:pas@/abitur_uwc")
 	if err != nil {
 		log.Fatal(err)
 	}
