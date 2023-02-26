@@ -1,0 +1,220 @@
+{{define "testDriveMessage"}}
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.108.0">
+      <title>УМЦ Приемная комиссия</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <link href="/static/css/home.css" rel="stylesheet">
+
+      <style>
+         .bd-placeholder-img {
+         font-size: 1.125rem;
+         text-anchor: middle;
+         -webkit-user-select: none;
+         -moz-user-select: none;
+         user-select: none;
+         }
+         @media (min-width: 768px) {
+         .bd-placeholder-img-lg {
+         font-size: 3.5rem;
+         }
+         }
+         .b-example-divider {
+         height: 3rem;
+         background-color: rgba(0, 0, 0, .1);
+         border: solid rgba(0, 0, 0, .15);
+         border-width: 1px 0;
+         box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+         }
+         .b-example-vr {
+         flex-shrink: 0;
+         width: 1.5rem;
+         height: 100vh;
+         }
+         .bi {
+         vertical-align: -.125em;
+         fill: currentColor;
+         }
+         .nav-scroller {
+         position: relative;
+         z-index: 2;
+         height: 2.75rem;
+         overflow-y: hidden;
+         }
+         .nav-scroller .nav {
+         display: flex;
+         flex-wrap: nowrap;
+         padding-bottom: 1rem;
+         margin-top: -1px;
+         overflow-x: auto;
+         text-align: center;
+         white-space: nowrap;
+         -webkit-overflow-scrolling: touch;
+         }
+      </style>
+      
+   </head>
+   
+   <body class="bg-light">
+      <header class="bd-header bg-white flex-wrap py-3 d-flex align-items-stretch border-bottom border-white">
+         <a href="http://imc-i.ru/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+         <img class="fit-picture" src="/static/img/logo.png">
+         </a>
+         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+         <span class="fs-4" >Приемная комиссия</span>
+         </a>
+         <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/testdrive" class="nav-link active" aria-current="page" style="--bs-nav-pills-link-active-bg: #12418e;">Тест-драйв</a></li>
+            <li class="nav-item"><a href="/information" class="nav-link" style="--bs-nav-link-color: #12418e;">Вся информация</a></li>
+            <li class="nav-item"><a href="/faqs" class="nav-link" style="--bs-nav-link-color: #12418e;">Вопросы\Ответы</a></li>
+         </ul>
+      </header>
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2"></div>
+      <div>
+         <br><br>
+         <h3>Тест-драйв профессий</h3>
+         <p>Уважаемый абитуриент, сейчас ты стоишь перед одним из самых важных решений в своей жизни – выбором профессии. Этот тест-драйв поможет тебе сориентироваться какое направление подготовки нашего вуза подходит тебе больше всего исходя из твоих способностей, склонностей и личностных качеств. Тебе будет предложено 28 вопросов, на каждый из которых  нужно будет дать ответ «да» или «нет». Время тестирования – 3-5 минут. В итоге ты увидишь приоритетное для тебя направление подготовки которые есть в нашем вузе и список профессий по которым ты можешь впоследствии работать.
+         </p>
+         <form method="POST">
+            <table>
+               <thead>
+                  <td></td>
+                  <td></td>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th><label>Имя*:</label></th>
+                     <td><input class="form-control" type="text" name="firstName" placeholder="Иван"/></td>
+                  </tr>
+                  <tr>
+                     <th><label>Фамилия*:</label></th>
+                     <td><input class="form-control" type="text" name="lastName" placeholder="Иванов"/></td>
+                  </tr>
+                  <tr>
+                     <th><label>Отчество:</label></th>
+                     <td><input id="name_middle" class="form-control" type="text"  placeholder="Константинович" name="patronymic"/></td>
+                  </tr>
+                  <tr>
+                     <th></th>
+                     <td><input class="form-check-input" type="checkbox" id="patronymicCheck" name="patronymicCheck1" /><label class="form-check-label" for="patronymicCheck1">Нет отчества</label></td>
+                  </tr>
+                  <tr>
+                     <th><label>Телефон*:</label></th>
+                     <td><input class="form-control" type="text" name="phone" placeholder="+79997653311"/></td>
+                  </tr>
+                  <tr>
+                     <th><label>Город*:</label></th>
+                     <td><input class="form-control" type="text" name="city" placeholder="Москва"/></td>
+                  </tr>
+                  <tr>
+                     <th><label>Почта*:</label></th>
+                     <td><input class="form-control" type="text" name="email" placeholder="example@exp.ru"/></td>
+                  </tr>
+                  <tr>
+                  </tr>
+               </tbody>
+            </table>
+            {{if . }}
+              <div>
+                <label class="text-danger">{{.Message}}</label>
+              </div>
+            {{end}}
+            <br>
+            <label class="form-label">Я хорошо знаю историю своей страны и всемирную историю</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio1" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio1" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я легко нахожу ошибки даже в сложном тексте</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio2" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio2" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">В своем классе я один из лучших по иностранному языку</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio3" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio3" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я легко могу написать длинное сочинение или эссе</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio4" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio4" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Мне нравится выступать перед большой аудиторией, чувствовать восхищенные взгляды</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio5" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio5" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Одним из моих любимый предметов в школе является биология</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio6" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio6" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Мне бы хотелось, чтобы моя будущая работа была связана с поездками, путешествиями</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio7" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio7" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я легко могу донести свои мысли и идеи до слушателей</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio8" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio8" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я много знаю о культуре, традициях и обычаях других народов</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio9" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio9" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Окружающие считают меня креативным, творческим человеком</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio10" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio10" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я легко знакомлюсь с новыми людьми</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio11" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio11" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я бы хотел, сделать этот мир и жизнь людей красивыми и гармоничными</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio12" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio12" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">В моих бумагах, документах и вещах всегда полный порядок</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio13" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio13" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Для меня важно, чтобы на своей работе я мог помогать людям</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio14" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio14" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Высокий заработок – главное для меня в работе</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio15" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio15" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">У меня хорошо получается устанавливать причины и следствия событий</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio16" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio16" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Мне легко поддержать беседу в любой компании</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio17" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio17" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я люблю быть в центре внимания</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio18" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio18" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Хочу в будущем работать в уединении, редко контактировать с коллегами</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio19" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio19" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Мне нравится работать в команде, в группе единомышленников</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio20" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio20" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">У меня хорошо получается организовать своих одноклассников, для решения какого-либо вопроса, руководить нашими действиями</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio21" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio21" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Моими сильными сторонами являются усидчивость и внимательность</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio22" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio22" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">В будущем я хочу посмотреть мир, узнать про другие страны и народы</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio23" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio23" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Я хорошо справляюсь с задачами на логическое мышление</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio24" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio24" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Моей сильной стороной является инициативность</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio25" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio25" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Знакомые и друзья говорят что я хорошо рисую</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio26" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio26" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">У меня богатая фантазия</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio27" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio27" value="yes"/><label class="form-check-label">Да</label><br>
+            <label class="form-label">Подсчеты и вычисления всегда была моей сильной стороной</label><br>
+            <input class="form-check-input" type="radio" id="0" name="questionRadio28" value="no"/><label class="form-check-label">Нет</label>
+            <input class="form-check-input" type="radio" id="1" name="questionRadio28" value="yes"/><label class="form-check-label">Да</label><br>
+            <br>
+            <input class="btn btn-outline-primary" type="submit" value="Результат"/>
+         </form>
+         
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   </body>
+</html>
+{{end}}
